@@ -1,0 +1,229 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* Font */
+@font-face {
+  font-family: Norpeth-Light;
+  src: url(../assets/fonts/Norpeth-Light.otf);
+}
+
+@font-face {
+  font-family: Norpeth-Medium;
+  src: url(../assets/fonts/Norpeth-Medium.otf);
+}
+
+@font-face {
+  font-family: Norpeth-Bold;
+  src: url(../assets/fonts/Norpeth-Bold.otf);
+}
+
+body, h1, h2, h3, h4 {
+  font-family: Norpeth-Medium;
+}
+
+/* Core styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: white;
+  color: #505050;
+  line-height: 175%;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+}
+a:active, a:focus {
+  outline: none;
+}
+
+.bold {
+  font-family: Norpeth-Bold;
+}
+
+.normal {
+  font-family: Norpeth-Medium;
+}
+
+/* Extra styles */
+header {
+  background: white;
+  width: 100%;
+  height: 100px;
+  display: inline-flex;
+  padding: 0 50px;
+}
+header .title {
+  font-family: Norpeth-Medium;
+  margin: auto 0;
+  width: 30%;
+  text-align: left;
+  font-size: 175%;
+}
+header ul {
+  margin: auto 0;
+  width: 70%;
+  font-size: 125%;
+  text-align: right;
+}
+header ul li {
+  margin: 0 10px;
+  display: inline-block;
+  /* Styling for individual links */
+}
+header ul li:nth-child(1) {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  border-bottom: 3px solid #0fb3ab;
+}
+header ul li:nth-child(1):hover {
+  color: #909090;
+}
+header ul li:nth-child(2) {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  border-bottom: 3px solid #483f88;
+}
+header ul li:nth-child(2):hover {
+  color: #909090;
+}
+header ul li:nth-child(3) {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  border-bottom: 3px solid #203462;
+}
+header ul li:nth-child(3):hover {
+  color: #909090;
+}
+header ul li:nth-child(4) {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  border-bottom: 3px solid #42b649;
+}
+header ul li:nth-child(4):hover {
+  color: #909090;
+}
+header ul li:nth-child(5) {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  border-bottom: 3px solid #5c7fc0;
+}
+header ul li:nth-child(5):hover {
+  color: #909090;
+}
+header ul li:nth-child(6) {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  border-bottom: 3px solid #0fb3ab;
+}
+header ul li:nth-child(6):hover {
+  color: #909090;
+}
+
+div#home {
+  background: #f7f7f7;
+}
+div#home .jumbotron {
+  font-size: 135%;
+  width: 55%;
+  margin: 0 auto;
+  height: 400px;
+}
+div#home .jumbotron .jumbotron-left {
+  padding-top: 146px;
+  width: 65%;
+  float: left;
+}
+div#home .jumbotron .jumbotron-left .jumbotron-title {
+  padding-bottom: 10px;
+  font-size: 150%;
+  font-family: Norpeth-Bold;
+}
+div#home .jumbotron .jumbotron-right {
+  padding-top: 80px;
+  width: 35%;
+  float: right;
+  color: #203462;
+  text-align: right;
+}
+div#home .jumbotron .jumbotron-right .logo {
+  width: 80%;
+  height: auto;
+}
+@media screen and (max-width: 1600px) {
+  div#home .jumbotron {
+    width: 65%;
+  }
+  div#home .jumbotron .jumbotron-left {
+    padding-top: 120px;
+  }
+}

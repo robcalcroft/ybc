@@ -1,0 +1,6 @@
+.DS_Store
+.Thumbs_DB
+node_modules/
+.sass-cache/
+src/**/*.min.*
+build/

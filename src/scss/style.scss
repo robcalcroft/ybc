@@ -1,0 +1,145 @@
+@import "compass/reset";
+@import "compass/typography/links/unstyled-link";
+@import "compass/css3";
+
+/* Font */
+@font-face {
+	font-family: Norpeth-Light;
+	src: url(../assets/fonts/Norpeth-Light.otf);
+}
+@font-face {
+	font-family: Norpeth-Medium;
+	src: url(../assets/fonts/Norpeth-Medium.otf);
+}
+@font-face {
+	font-family: Norpeth-Bold;
+	src: url(../assets/fonts/Norpeth-Bold.otf);
+}
+
+body, h1, h2, h3, h4 {
+	font-family: Norpeth-Medium;
+}
+
+///////////////
+// Sass Vars //
+///////////////
+
+// Colours
+$ybc-green: rgb(66, 182, 73);
+$ybc-light-blue: rgb(92, 127, 192);
+$ybc-purple: rgb(72, 63, 136);
+$ybc-turquoise: rgb(15, 179, 171);
+$ybc-dark-blue: rgb(32, 52, 98);
+$background: white;
+$background-alt: darken($background, 3%);
+
+// Colour Alias'
+$quality: $ybc-green;
+$marketing: $ybc-light-blue;
+$finance: $ybc-purple;
+$workforce-dev: $ybc-turquoise;
+$credit: $ybc-dark-blue;
+
+// Text
+$text-main: rgb(80,80,80);
+
+////////////
+// Mixins //
+////////////
+@mixin header-link-border($color) {
+	@include transition(.5s);
+	border-bottom: 3px solid $color;
+	&:hover {
+		color: lighten($text-main, 25%);
+	}
+}
+
+
+/* Core styles */
+* { box-sizing: border-box; }
+
+html, body {
+	background: $background;
+	color: $text-main;
+	line-height: 175%;
+}
+
+a {
+	@include unstyled-link();
+}
+
+.bold { font-family: Norpeth-Bold; }
+.normal { font-family: Norpeth-Medium; }
+
+
+/* Extra styles */
+header {
+	background: $background;
+	width: 100%;
+	height: 100px;
+	display: inline-flex;
+	padding: 0 50px;
+	.title {
+		font-family: Norpeth-Medium;
+		margin: auto 0;
+		width: 30%;
+		text-align: left;
+		font-size: 175%;
+	}
+	ul {
+		margin: auto 0;
+		width: 70%;
+		font-size: 125%;
+		text-align: right;
+		li {
+			margin: 0 10px;
+			display: inline-block;
+
+			/* Styling for individual links */
+			&:nth-child(1) { @include header-link-border($ybc-turquoise); }
+			&:nth-child(2) { @include header-link-border($ybc-purple); }
+			&:nth-child(3) { @include header-link-border($ybc-dark-blue); }
+			&:nth-child(4) { @include header-link-border($ybc-green); }
+			&:nth-child(5) { @include header-link-border($ybc-light-blue); }
+			&:nth-child(6) { @include header-link-border($ybc-turquoise); }
+		}
+	}
+}
+
+div#home {
+	background: $background-alt;
+	.jumbotron {
+		font-size: 135%;
+		width: 55%;
+		margin: 0 auto;
+		height: 400px;
+		.jumbotron-left {
+			padding-top: 146px;
+			width: 65%;
+			float: left;
+			.jumbotron-title {
+				padding-bottom: 10px;
+				font-size: 150%;
+				font-family: Norpeth-Bold;
+			}
+
+		}
+		.jumbotron-right {
+			padding-top: 80px;
+			width: 35%;
+			float: right;
+			color: $ybc-dark-blue;
+			text-align: right;
+			.logo {
+				width: 80%;
+				height: auto;
+			}
+		}
+		@media screen and (max-width: 1600px) {
+			width: 65%;
+			.jumbotron-left { padding-top: 120px; }
+		}
+	}
+}
+
+
