@@ -3,4 +3,5 @@
 node_modules/
 .sass-cache/
 src/**/*.min.*
+!src/js/jquery.tooltipster.min.js
 build/

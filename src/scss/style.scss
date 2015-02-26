@@ -4,7 +4,7 @@
 @import "compass/layout/sticky-footer";
 @import "compass/utilities/general/clearfix";
 
-@include sticky-footer(50px, ".container", ".main-push", "footer");
+@include sticky-footer(50px, ".root-container", ".main-push", "footer");
 
 /* Font */
 @font-face {
@@ -47,6 +47,9 @@ $credit: $ybc-dark-blue;
 // Text
 $text-main: rgb(80,80,80);
 
+// Width
+$width-default: 65%;
+
 ////////////
 // Mixins //
 ////////////
@@ -66,15 +69,65 @@ html, body {
 	background: $background;
 	color: $text-main;
 	line-height: 175%;
+	font-size: 17px;
 }
 
 a {
 	@include unstyled-link();
 }
 
+a.link-underline {
+	text-decoration: underline;
+}
+
+h1 {
+	@extend .bold;
+	font-size: 250%;
+	padding: 1em 0;
+	color: $ybc-turquoise;
+}
+
+h2 {
+	@extend .bold;
+	font-size: 140%;
+	padding-bottom: .25em;
+}
+
+h3 {
+	@extend .bold;
+	font-size: 120%;
+	padding-bottom: .15em;
+}
+
+section {
+	padding: 1em 0;
+}
+
+ul:not(.nav-tooltip) {
+	padding: 10px 0 10px 40px;
+	li {
+		list-style-type: square;
+	}
+}
+
+button {
+	@include border-radius();
+	margin: 10px 0;
+	$button-color: darken($background-alt, 25%);
+	font-size: 70%;
+	border: 0;
+	background: transparent;
+	padding: 10px;
+	border: 2px solid $button-color;
+	color: darken($button-color, 20%);
+	
+}
+
+.light { font-family: Norpeth-Light; }
 .bold { font-family: Norpeth-Bold; }
 .normal { font-family: Norpeth-Medium; }
 .underline { border-bottom: 2px solid white; }
+.italic { font-style: italic; }
 
 
 /* Extra styles */
@@ -83,7 +136,7 @@ header {
 	width: 100%;
 	height: 100px;
 	display: inline-flex;
-	padding: 0 50px;
+	padding: 0 60px;
 	.title {
 		font-family: Norpeth-Medium;
 		margin: auto 0;
@@ -111,16 +164,34 @@ header {
 	}
 }
 
-div.home-top {
+.nav-tooltip {
+	font-size: 120%;
+	font-family: Norpeth-Medium;
+	li {
+		padding: 7px 3px;
+		margin: 6px;
+		border-bottom: 1px solid rgba(255,255,255,.25);
+	}
+}
+
+.container {
+	width: $width-default;
+	margin: 0 auto 2em auto;
+	@media screen and (max-width: 1600px) {
+		width: $width-default + 10%;
+	}
+}
+
+.home-top {
 	background: $background-alt;
 	.jumbotron {
 		font-size: 135%;
-		width: 55%;
+		width: $width-default;
 		margin: 0 auto;
 		height: 400px;
 		.jumbotron-left {
 			padding-top: 146px;
-			width: 65%;
+			width: $width-default;
 			float: left;
 			.jumbotron-title {
 				padding-bottom: 10px;
@@ -130,25 +201,34 @@ div.home-top {
 
 		}
 		.jumbotron-right {
-			padding-top: 70px;
+			padding-top: 60px;
 			width: 35%;
 			float: right;
 			color: $ybc-dark-blue;
 			text-align: right;
 			.logo {
-				width: 80%;
+				width: 70%;
 				height: auto;
 			}
 		}
 		@media screen and (max-width: 1600px) {
-			width: 65%;
+			width: $width-default + 10%;
 			.jumbotron-left { padding-top: 120px; }
 		}
 	}
 }
-div.home-bottom {
+
+.home-middle {
+	text-align: center;
+	padding-top: 30px;
+	p {
+		font-size: 175%;
+	}
+}
+
+.home-bottom {
 	article {
-		width: 55%;
+		width: $width-default;
 		margin: 0 auto;
 		@include clearfix();
 		padding: 30px 0;
@@ -160,18 +240,20 @@ div.home-bottom {
 			&:nth-child(2) {
 				float: right;
 			}
-			ul {
-				padding-left: 20px;
-				li {
-					list-style-type: square;
-				}
-			}
 		}
 		@media screen and (max-width: 1600px) {
-			width: 65%;
+			width: $width-default + 10%;
 		}
 	}
 }
+
+.credit { color: $credit }
+.quality { color: $quality }
+.marketing { color: $marketing }
+.workforce-dev { color: $workforce-dev }
+.finance { color: $finance }
+
+.light-blue { @extend .marketing; }
 
 // Decide on the right colour
 footer {
@@ -179,10 +261,10 @@ footer {
 	background: lighten($ybc-light-blue, 20%);
 	.footer-text {
 		padding-top: 10px;
-		width: 55%;
+		width: $width-default;
 		margin: 0 auto;
 		@media screen and (max-width: 1600px) {
-			width: 65%;
+			width: $width-default + 10%;
 		}
 	}
 }

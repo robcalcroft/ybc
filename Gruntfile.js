@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         banner: '/* ** <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> - DO NOT EDIT; FILE AUTO GENERATED ** */\n'
       },
       dist: {
-        src: ['src/js/controller.js', 'src/js/views.js', '!src/js/*-all.js', '!src/js/*-all.min.js'],
+        src: ['src/js/main.js', '!src/js/*-all.js', '!src/js/*-all.min.js'],
         dest: 'src/js/<%= pkg.name %>-all.js',
       },
     },

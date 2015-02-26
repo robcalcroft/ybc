@@ -3,19 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>YBC</title>
-	<link rel="stylesheet" href="css/ybc.min.css">
+	<!-- Note to change root links before deployment -->
+	<link rel="stylesheet" href="/ybc/build/css/ybc.min.css">
+	<link rel="stylesheet" href="/ybc/build/css/tooltipster.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-	<div class="container">
+	<div class="root-container">
 	<header>
 		<div class="title"><span class="bold">Y</span>orkshire <span class="bold">B</span>usiness <span class="bold">C</span>ollective</div>
 		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="outsourcing">Why Outsource?</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="working-with-ybc">Working with YBC</a></li>
-			<li><a href="contact">Contact Us</a></li>
-			<li><a href="testimonials">Testimonials</a></li>
+			<!-- Change root on deployment -->
+			<li><a href="/ybc/build/">Home</a></li>
+			<li><a href="/ybc/build/why-outsource">Why Outsource?</a></li>
+			<li><a href="#" id="about-nav">About&nbsp;<i style="color:rgb(200,200,200)" class="fa fa-navicon"></i></a></li>
+			<li><a href="/ybc/build/working-with-ybc">Working with YBC</a></li>
+			<li><a href="/ybc/build/contact">Contact Us</a></li>
+			<li><a href="/ybc/build/testimonials">Testimonials</a></li>
 		</ul>
 	</header>

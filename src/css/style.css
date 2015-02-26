@@ -58,14 +58,14 @@ html, body {
   height: 100%;
 }
 
-.container {
+.root-container {
   clear: both;
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin-bottom: -50px;
 }
-.container .main-push {
+.root-container .main-push {
   height: 50px;
 }
 
@@ -104,6 +104,7 @@ html, body {
   background: white;
   color: #505050;
   line-height: 175%;
+  font-size: 17px;
 }
 
 a {
@@ -115,7 +116,57 @@ a:active, a:focus {
   outline: none;
 }
 
-.bold {
+a.link-underline {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 250%;
+  padding: 1em 0;
+  color: #0fb3ab;
+}
+
+h2 {
+  font-size: 140%;
+  padding-bottom: .25em;
+}
+
+h3 {
+  font-size: 120%;
+  padding-bottom: .15em;
+}
+
+section {
+  padding: 1em 0;
+}
+
+ul:not(.nav-tooltip) {
+  padding: 10px 0 10px 40px;
+}
+ul:not(.nav-tooltip) li {
+  list-style-type: square;
+}
+
+button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-size: 70%;
+  border: 0;
+  background: transparent;
+  padding: 10px;
+  border: 2px solid #b8b8b8;
+  color: #858585;
+}
+
+.light {
+  font-family: Norpeth-Light;
+}
+
+.bold, h1, h2, h3 {
   font-family: Norpeth-Bold;
 }
 
@@ -127,13 +178,17 @@ a:active, a:focus {
   border-bottom: 2px solid white;
 }
 
+.italic {
+  font-style: italic;
+}
+
 /* Extra styles */
 header {
   background: white;
   width: 100%;
   height: 100px;
   display: inline-flex;
-  padding: 0 50px;
+  padding: 0 60px;
 }
 header .title {
   font-family: Norpeth-Medium;
@@ -214,71 +269,113 @@ header ul li:nth-child(6):hover {
   color: #909090;
 }
 
-div.home-top {
+.nav-tooltip {
+  font-size: 120%;
+  font-family: Norpeth-Medium;
+}
+.nav-tooltip li {
+  padding: 7px 3px;
+  margin: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.container {
+  width: 65%;
+  margin: 0 auto 2em auto;
+}
+@media screen and (max-width: 1600px) {
+  .container {
+    width: 75%;
+  }
+}
+
+.home-top {
   background: #f7f7f7;
 }
-div.home-top .jumbotron {
+.home-top .jumbotron {
   font-size: 135%;
-  width: 55%;
+  width: 65%;
   margin: 0 auto;
   height: 400px;
 }
-div.home-top .jumbotron .jumbotron-left {
+.home-top .jumbotron .jumbotron-left {
   padding-top: 146px;
   width: 65%;
   float: left;
 }
-div.home-top .jumbotron .jumbotron-left .jumbotron-title {
+.home-top .jumbotron .jumbotron-left .jumbotron-title {
   padding-bottom: 10px;
   font-size: 150%;
   font-family: Norpeth-Bold;
 }
-div.home-top .jumbotron .jumbotron-right {
-  padding-top: 70px;
+.home-top .jumbotron .jumbotron-right {
+  padding-top: 60px;
   width: 35%;
   float: right;
   color: #203462;
   text-align: right;
 }
-div.home-top .jumbotron .jumbotron-right .logo {
-  width: 80%;
+.home-top .jumbotron .jumbotron-right .logo {
+  width: 70%;
   height: auto;
 }
 @media screen and (max-width: 1600px) {
-  div.home-top .jumbotron {
-    width: 65%;
+  .home-top .jumbotron {
+    width: 75%;
   }
-  div.home-top .jumbotron .jumbotron-left {
+  .home-top .jumbotron .jumbotron-left {
     padding-top: 120px;
   }
 }
 
-div.home-bottom article {
-  width: 55%;
+.home-middle {
+  text-align: center;
+  padding-top: 30px;
+}
+.home-middle p {
+  font-size: 175%;
+}
+
+.home-bottom article {
+  width: 65%;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
   padding: 30px 0;
 }
-div.home-bottom article section {
+.home-bottom article section {
   width: 47.5%;
 }
-div.home-bottom article section:nth-child(1) {
+.home-bottom article section:nth-child(1) {
   float: left;
 }
-div.home-bottom article section:nth-child(2) {
+.home-bottom article section:nth-child(2) {
   float: right;
 }
-div.home-bottom article section ul {
-  padding-left: 20px;
-}
-div.home-bottom article section ul li {
-  list-style-type: square;
-}
 @media screen and (max-width: 1600px) {
-  div.home-bottom article {
-    width: 65%;
+  .home-bottom article {
+    width: 75%;
   }
+}
+
+.credit {
+  color: #203462;
+}
+
+.quality {
+  color: #42b649;
+}
+
+.marketing, .light-blue {
+  color: #5c7fc0;
+}
+
+.workforce-dev {
+  color: #0fb3ab;
+}
+
+.finance {
+  color: #483f88;
 }
 
 footer {
@@ -287,11 +384,11 @@ footer {
 }
 footer .footer-text {
   padding-top: 10px;
-  width: 55%;
+  width: 65%;
   margin: 0 auto;
 }
 @media screen and (max-width: 1600px) {
   footer .footer-text {
-    width: 65%;
+    width: 75%;
   }
 }
