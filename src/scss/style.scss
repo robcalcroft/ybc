@@ -1,6 +1,10 @@
 @import "compass/reset";
 @import "compass/typography/links/unstyled-link";
 @import "compass/css3";
+@import "compass/layout/sticky-footer";
+@import "compass/utilities/general/clearfix";
+
+@include sticky-footer(50px, ".container", ".main-push", "footer");
 
 /* Font */
 @font-face {
@@ -70,6 +74,7 @@ a {
 
 .bold { font-family: Norpeth-Bold; }
 .normal { font-family: Norpeth-Medium; }
+.underline { border-bottom: 2px solid white; }
 
 
 /* Extra styles */
@@ -106,7 +111,7 @@ header {
 	}
 }
 
-div#home {
+div.home-top {
 	background: $background-alt;
 	.jumbotron {
 		font-size: 135%;
@@ -125,7 +130,7 @@ div#home {
 
 		}
 		.jumbotron-right {
-			padding-top: 80px;
+			padding-top: 70px;
 			width: 35%;
 			float: right;
 			color: $ybc-dark-blue;
@@ -138,6 +143,46 @@ div#home {
 		@media screen and (max-width: 1600px) {
 			width: 65%;
 			.jumbotron-left { padding-top: 120px; }
+		}
+	}
+}
+div.home-bottom {
+	article {
+		width: 55%;
+		margin: 0 auto;
+		@include clearfix();
+		padding: 30px 0;
+		section {
+			width: 47.5%;
+			&:nth-child(1) {
+				float: left;
+			}
+			&:nth-child(2) {
+				float: right;
+			}
+			ul {
+				padding-left: 20px;
+				li {
+					list-style-type: square;
+				}
+			}
+		}
+		@media screen and (max-width: 1600px) {
+			width: 65%;
+		}
+	}
+}
+
+// Decide on the right colour
+footer {
+	color: $background;
+	background: lighten($ybc-light-blue, 20%);
+	.footer-text {
+		padding-top: 10px;
+		width: 55%;
+		margin: 0 auto;
+		@media screen and (max-width: 1600px) {
+			width: 65%;
 		}
 	}
 }
