@@ -179,6 +179,7 @@ header {
 	margin: 0 auto 2em auto;
 	@media screen and (max-width: 1600px) {
 		width: $width-default + 10%;
+		// 1325 - where it all goes wrong ;)
 	}
 }
 
@@ -188,9 +189,9 @@ header {
 		font-size: 135%;
 		width: $width-default;
 		margin: 0 auto;
-		height: 400px;
+		height: 350px;
 		.jumbotron-left {
-			padding-top: 146px;
+			padding-top: 126px;
 			width: $width-default;
 			float: left;
 			.jumbotron-title {
@@ -201,7 +202,7 @@ header {
 
 		}
 		.jumbotron-right {
-			padding-top: 60px;
+			padding-top: 30px;
 			width: 35%;
 			float: right;
 			color: $ybc-dark-blue;
@@ -214,6 +215,7 @@ header {
 		@media screen and (max-width: 1600px) {
 			width: $width-default + 10%;
 			.jumbotron-left { padding-top: 120px; }
+			.jumbotron-right { padding-top: 50px }
 		}
 	}
 }
@@ -244,6 +246,19 @@ header {
 		@media screen and (max-width: 1600px) {
 			width: $width-default + 10%;
 		}
+	}
+}
+
+.info-right {
+	float: right;
+	width: 25%;
+	border: 2px solid darken($background-alt, 7.5%);
+	padding: 0 20px;
+	@include border-radius();
+	font-size: 90%;
+	margin-left: 20px;
+	li {
+		margin-left: -20px;
 	}
 }
 

@@ -296,10 +296,10 @@ header ul li:nth-child(6):hover {
   font-size: 135%;
   width: 65%;
   margin: 0 auto;
-  height: 400px;
+  height: 350px;
 }
 .home-top .jumbotron .jumbotron-left {
-  padding-top: 146px;
+  padding-top: 126px;
   width: 65%;
   float: left;
 }
@@ -309,7 +309,7 @@ header ul li:nth-child(6):hover {
   font-family: Norpeth-Bold;
 }
 .home-top .jumbotron .jumbotron-right {
-  padding-top: 60px;
+  padding-top: 30px;
   width: 35%;
   float: right;
   color: #203462;
@@ -325,6 +325,9 @@ header ul li:nth-child(6):hover {
   }
   .home-top .jumbotron .jumbotron-left {
     padding-top: 120px;
+  }
+  .home-top .jumbotron .jumbotron-right {
+    padding-top: 50px;
   }
 }
 
@@ -356,6 +359,23 @@ header ul li:nth-child(6):hover {
   .home-bottom article {
     width: 75%;
   }
+}
+
+.info-right {
+  float: right;
+  width: 25%;
+  border: 2px solid #e4e4e4;
+  padding: 0 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 90%;
+  margin-left: 20px;
+}
+.info-right li {
+  margin-left: -20px;
 }
 
 .credit {
