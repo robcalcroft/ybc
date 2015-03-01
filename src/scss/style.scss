@@ -63,17 +63,23 @@ $width-default: 65%;
 
 
 /* Core styles */
-* { box-sizing: border-box; }
+* { @include box-sizing(border-box); }
 
 html, body {
 	background: $background;
 	color: $text-main;
 	line-height: 175%;
 	font-size: 17px;
+	@media screen and (max-width: 550px) {
+		width: 550px;
+	}
 }
 
 a {
 	@include unstyled-link();
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 a.link-underline {
@@ -99,8 +105,15 @@ h3 {
 	padding-bottom: .15em;
 }
 
+h1,h2,h3 {
+	line-height: 110%;
+}
+
 section {
 	padding: 1em 0;
+	@media screen and (max-width: 850px) {
+		font-size: 150%;
+	}
 }
 
 ul:not(.nav-tooltip) {
@@ -123,6 +136,10 @@ button {
 	
 }
 
+p {
+	padding: 5px 0;
+}
+
 .light { font-family: Norpeth-Light; }
 .bold { font-family: Norpeth-Bold; }
 .normal { font-family: Norpeth-Medium; }
@@ -136,6 +153,7 @@ header {
 	width: 100%;
 	height: 100px;
 	display: inline-flex;
+	display: -webkit-inline-flex;
 	padding: 0 60px;
 	.title {
 		font-family: Norpeth-Medium;
@@ -143,9 +161,34 @@ header {
 		width: 30%;
 		text-align: left;
 		font-size: 175%;
+		@media screen and (max-width: 1320px) {
+			font-size: 125%;
+		}
+		@media screen and (max-width: 1140px) {
+			font-size: 175%;
+			width: 70%;
+		}
+	}
+	.nav-show-mobile {
+		margin: auto 0;
+		display: none;
+		width: 30%;
+		text-align: right;
+		span {
+			font-size: 125%;
+			@include border-radius();
+			border: 2px solid $ybc-light-blue;
+			padding: 7px 15px;
+			&:hover, &:active {
+				color: white;
+				background: $ybc-light-blue;
+				cursor: pointer;
+			}
+		}
 	}
 	ul {
 		margin: auto 0;
+		padding: 0 !important;
 		width: 70%;
 		font-size: 125%;
 		text-align: right;
@@ -161,6 +204,39 @@ header {
 			&:nth-child(5) { @include header-link-border($ybc-light-blue); }
 			&:nth-child(6) { @include header-link-border($ybc-turquoise); }
 		}
+		@media screen and (max-width: 1320px) {
+			font-size: 110%;
+		}
+	}
+	@media screen and (max-width: 1140px) {
+		.nav-show-mobile {
+			display: block;
+		}
+		ul {
+			color: white;
+			font-size: 200%;
+			padding: 0 !important;
+			top: 100px;
+			left: 0;
+			position: absolute;
+			text-align: center;
+			display: none;
+			width: 100%;
+			background: $ybc-light-blue;
+			li {
+				padding: 10px 0;
+				margin: 0;
+				display: block;
+				border: 0 !important;
+				&:hover {
+					color: inherit !important;
+					background: darken($ybc-light-blue, 10%);
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 850px) {
+		padding: 0 10px;
 	}
 }
 
@@ -181,6 +257,9 @@ header {
 		width: $width-default + 10%;
 		// 1325 - where it all goes wrong ;)
 	}
+	@media screen and (max-width: 1320px) {
+		width: 90%;
+	}
 }
 
 .home-top {
@@ -199,7 +278,6 @@ header {
 				font-size: 150%;
 				font-family: Norpeth-Bold;
 			}
-
 		}
 		.jumbotron-right {
 			padding-top: 30px;
@@ -216,6 +294,33 @@ header {
 			width: $width-default + 10%;
 			.jumbotron-left { padding-top: 120px; }
 			.jumbotron-right { padding-top: 50px }
+		}
+		@media screen and (max-width: 1400px) {
+			.jumbotron-left { padding-top: 120px; }
+			.jumbotron-right { padding-top: 70px }
+		}
+		@media screen and (max-width: 1200px) {
+			.jumbotron-left { padding-top: 90px; }
+		}
+		@media screen and (max-width: 1140px) {
+			.jumbotron-right { padding-top: 110px }
+			.jumbotron-left { padding-top: 110px; }
+			font-size: 100%;
+			.jumbotron-title {
+				font-size: 120%;
+			}
+		}
+		@media screen and (max-width: 850px) {
+			width: 95%;
+			height: 275px;
+			.jumbotron-right {
+				display: none;
+			}
+			.jumbotron-left {
+				width: 100%;
+				font-size: 140%;
+				padding-top: 50px;
+			}
 		}
 	}
 }
@@ -246,6 +351,15 @@ header {
 		@media screen and (max-width: 1600px) {
 			width: $width-default + 10%;
 		}
+		@media screen and (max-width: 850px) {
+			width: 95%;
+		}
+		@media screen and (max-width: 750px) {
+			section {
+				float: none;
+				width: 100%;
+			}
+		}
 	}
 }
 
@@ -259,6 +373,13 @@ header {
 	margin-left: 20px;
 	li {
 		margin-left: -20px;
+	}
+	@media screen and (max-width: 1020px) {
+		float: none;
+		width: 90%;
+		margin-left: 0;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 }
 
@@ -281,7 +402,8 @@ footer {
 		@media screen and (max-width: 1600px) {
 			width: $width-default + 10%;
 		}
+		@media screen and (max-width: 900px) {
+			font-size: 90%;
+		}
 	}
 }
-
-

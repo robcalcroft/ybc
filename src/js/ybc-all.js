@@ -1,12 +1,13 @@
-/* ** ybc 2015-02-28 - DO NOT EDIT; FILE AUTO GENERATED ** */
+/* ** ybc 2015-03-01 - DO NOT EDIT; FILE AUTO GENERATED ** */
 $(document).ready(function() {
+	// Tooltips
 	(function addToolTip() {
 		var ttContent = "<ul class='nav-tooltip'>"+
-							"<li><a href='/ybc/build/people/mal'>Mal Peacock</a></li>"+
-							"<li><a href='/ybc/build/people/catherine'>Catherine Wainwright</a></li>"+
-							"<li><a href='/ybc/build/people/jackie'>Jackie Wilson</a>"+
-							"<li><a href='/ybc/build/people/john'>John Wilson</a></li>"+
-							"<li><a href='/ybc/build/people/cath'>Cath Winfield</a></li>"+
+							"<li><a href='/ybc/build/people/mal'>Credit</a></li>"+
+							"<li><a href='/ybc/build/people/catherine'>Finance</a></li>"+
+							"<li><a href='/ybc/build/people/jackie'>Marketing</a>"+
+							"<li><a href='/ybc/build/people/john'>Quality, Environment, Health & Safety</a></li>"+
+							"<li><a href='/ybc/build/people/cath'>Leadership and Staff Development</a></li>"+
 						"</ul>";
 
 		$('#about-nav').tooltipster({
@@ -15,4 +16,9 @@ $(document).ready(function() {
 			iconTouch: true
 		})
 	})();
+
+	// Show hide nav menu
+	$('.nav-show-mobile').click(function() {
+		$('#nav').slideToggle();
+	})
 })

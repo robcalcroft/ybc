@@ -97,6 +97,8 @@ body, h1, h2, h3, h4 {
 
 /* Core styles */
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -106,6 +108,11 @@ html, body {
   line-height: 175%;
   font-size: 17px;
 }
+@media screen and (max-width: 550px) {
+  html, body {
+    width: 550px;
+  }
+}
 
 a {
   color: inherit;
@@ -114,6 +121,9 @@ a {
 }
 a:active, a:focus {
   outline: none;
+}
+a:hover {
+  cursor: pointer;
 }
 
 a.link-underline {
@@ -136,8 +146,17 @@ h3 {
   padding-bottom: .15em;
 }
 
+h1, h2, h3 {
+  line-height: 110%;
+}
+
 section {
   padding: 1em 0;
+}
+@media screen and (max-width: 850px) {
+  section {
+    font-size: 150%;
+  }
 }
 
 ul:not(.nav-tooltip) {
@@ -160,6 +179,10 @@ button {
   padding: 10px;
   border: 2px solid #b8b8b8;
   color: #858585;
+}
+
+p {
+  padding: 5px 0;
 }
 
 .light {
@@ -188,6 +211,7 @@ header {
   width: 100%;
   height: 100px;
   display: inline-flex;
+  display: -webkit-inline-flex;
   padding: 0 60px;
 }
 header .title {
@@ -197,8 +221,41 @@ header .title {
   text-align: left;
   font-size: 175%;
 }
+@media screen and (max-width: 1320px) {
+  header .title {
+    font-size: 125%;
+  }
+}
+@media screen and (max-width: 1140px) {
+  header .title {
+    font-size: 175%;
+    width: 70%;
+  }
+}
+header .nav-show-mobile {
+  margin: auto 0;
+  display: none;
+  width: 30%;
+  text-align: right;
+}
+header .nav-show-mobile span {
+  font-size: 125%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #5c7fc0;
+  padding: 7px 15px;
+}
+header .nav-show-mobile span:hover, header .nav-show-mobile span:active {
+  color: white;
+  background: #5c7fc0;
+  cursor: pointer;
+}
 header ul {
   margin: auto 0;
+  padding: 0 !important;
   width: 70%;
   font-size: 125%;
   text-align: right;
@@ -268,6 +325,43 @@ header ul li:nth-child(6) {
 header ul li:nth-child(6):hover {
   color: #909090;
 }
+@media screen and (max-width: 1320px) {
+  header ul {
+    font-size: 110%;
+  }
+}
+@media screen and (max-width: 1140px) {
+  header .nav-show-mobile {
+    display: block;
+  }
+  header ul {
+    color: white;
+    font-size: 200%;
+    padding: 0 !important;
+    top: 100px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    display: none;
+    width: 100%;
+    background: #5c7fc0;
+  }
+  header ul li {
+    padding: 10px 0;
+    margin: 0;
+    display: block;
+    border: 0 !important;
+  }
+  header ul li:hover {
+    color: inherit !important;
+    background: #4165a8;
+  }
+}
+@media screen and (max-width: 850px) {
+  header {
+    padding: 0 10px;
+  }
+}
 
 .nav-tooltip {
   font-size: 120%;
@@ -286,6 +380,11 @@ header ul li:nth-child(6):hover {
 @media screen and (max-width: 1600px) {
   .container {
     width: 75%;
+  }
+}
+@media screen and (max-width: 1320px) {
+  .container {
+    width: 90%;
   }
 }
 
@@ -330,6 +429,47 @@ header ul li:nth-child(6):hover {
     padding-top: 50px;
   }
 }
+@media screen and (max-width: 1400px) {
+  .home-top .jumbotron .jumbotron-left {
+    padding-top: 120px;
+  }
+  .home-top .jumbotron .jumbotron-right {
+    padding-top: 70px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .home-top .jumbotron .jumbotron-left {
+    padding-top: 90px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .home-top .jumbotron {
+    font-size: 100%;
+  }
+  .home-top .jumbotron .jumbotron-right {
+    padding-top: 110px;
+  }
+  .home-top .jumbotron .jumbotron-left {
+    padding-top: 110px;
+  }
+  .home-top .jumbotron .jumbotron-title {
+    font-size: 120%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .home-top .jumbotron {
+    width: 95%;
+    height: 275px;
+  }
+  .home-top .jumbotron .jumbotron-right {
+    display: none;
+  }
+  .home-top .jumbotron .jumbotron-left {
+    width: 100%;
+    font-size: 140%;
+    padding-top: 50px;
+  }
+}
 
 .home-middle {
   text-align: center;
@@ -360,6 +500,17 @@ header ul li:nth-child(6):hover {
     width: 75%;
   }
 }
+@media screen and (max-width: 850px) {
+  .home-bottom article {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .home-bottom article section {
+    float: none;
+    width: 100%;
+  }
+}
 
 .info-right {
   float: right;
@@ -376,6 +527,15 @@ header ul li:nth-child(6):hover {
 }
 .info-right li {
   margin-left: -20px;
+}
+@media screen and (max-width: 1020px) {
+  .info-right {
+    float: none;
+    width: 90%;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 .credit {
@@ -410,5 +570,10 @@ footer .footer-text {
 @media screen and (max-width: 1600px) {
   footer .footer-text {
     width: 75%;
+  }
+}
+@media screen and (max-width: 900px) {
+  footer .footer-text {
+    font-size: 90%;
   }
 }
