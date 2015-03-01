@@ -391,6 +391,14 @@ header {
 
 .light-blue { @extend .marketing; }
 
+img.area-image {
+	position: absolute;
+	margin-top: -5px;
+	margin-left: 10px;
+	height: 50px;
+	width: 60px;
+}
+
 // Decide on the right colour
 footer {
 	color: $background;

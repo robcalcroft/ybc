@@ -558,6 +558,14 @@ header ul li:nth-child(6):hover {
   color: #483f88;
 }
 
+img.area-image {
+  position: absolute;
+  margin-top: -5px;
+  margin-left: 10px;
+  height: 50px;
+  width: 60px;
+}
+
 footer {
   color: white;
   background: #a6b9dc;
