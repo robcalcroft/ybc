@@ -70,9 +70,6 @@ html, body {
 	color: $text-main;
 	line-height: 175%;
 	font-size: 17px;
-	@media screen and (max-width: 550px) {
-		width: 550px;
-	}
 }
 
 a {
@@ -318,7 +315,17 @@ header {
 			}
 			.jumbotron-left {
 				width: 100%;
-				font-size: 140%;
+				font-size: 100%;
+				padding-top: 50px;
+			}
+		}
+		@media screen and (max-width: 530px) {
+			.jumbotron-right {
+				display: none;
+			}
+			.jumbotron-left {
+				width: 100%;
+				font-size: 100%;
 				padding-top: 50px;
 			}
 		}
@@ -397,6 +404,9 @@ img.area-image {
 	margin-left: 10px;
 	height: 50px;
 	width: 60px;
+	@media screen and (max-width: 450px) {
+		display: none;
+	}
 }
 
 // Decide on the right colour
@@ -412,6 +422,10 @@ footer {
 		}
 		@media screen and (max-width: 900px) {
 			font-size: 90%;
+		}
+		@media screen and (max-width: 900px) {
+			width: 95%;
+			font-size: 80%;
 		}
 	}
 }

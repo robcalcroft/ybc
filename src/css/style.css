@@ -108,11 +108,6 @@ html, body {
   line-height: 175%;
   font-size: 17px;
 }
-@media screen and (max-width: 550px) {
-  html, body {
-    width: 550px;
-  }
-}
 
 a {
   color: inherit;
@@ -466,7 +461,17 @@ header ul li:nth-child(6):hover {
   }
   .home-top .jumbotron .jumbotron-left {
     width: 100%;
-    font-size: 140%;
+    font-size: 100%;
+    padding-top: 50px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .home-top .jumbotron .jumbotron-right {
+    display: none;
+  }
+  .home-top .jumbotron .jumbotron-left {
+    width: 100%;
+    font-size: 100%;
     padding-top: 50px;
   }
 }
@@ -565,6 +570,11 @@ img.area-image {
   height: 50px;
   width: 60px;
 }
+@media screen and (max-width: 450px) {
+  img.area-image {
+    display: none;
+  }
+}
 
 footer {
   color: white;
@@ -583,5 +593,11 @@ footer .footer-text {
 @media screen and (max-width: 900px) {
   footer .footer-text {
     font-size: 90%;
+  }
+}
+@media screen and (max-width: 900px) {
+  footer .footer-text {
+    width: 95%;
+    font-size: 80%;
   }
 }
