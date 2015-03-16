@@ -212,19 +212,52 @@ header {
 header .title {
   font-family: Norpeth-Medium;
   margin: auto 0;
-  width: 30%;
+  width: 35%;
   text-align: left;
   font-size: 175%;
 }
-@media screen and (max-width: 1320px) {
+@media screen and (max-width: 1380px) {
   header .title {
     font-size: 125%;
+    width: 30%;
+  }
+}
+@media screen and (max-width: 1180px) {
+  header .title {
+    width: 32.5%;
   }
 }
 @media screen and (max-width: 1140px) {
   header .title {
     font-size: 175%;
     width: 70%;
+  }
+}
+@media screen and (max-width: 650px) {
+  header .title {
+    font-size: 125%;
+    width: 75%;
+  }
+}
+@media screen and (max-width: 470px) {
+  header .title {
+    font-size: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  header .title {
+    font-size: 95%;
+  }
+}
+@media screen and (max-width: 360px) {
+  header .title {
+    font-size: 92.5%;
+  }
+  header .title span {
+    padding-left: 0 !important;
+  }
+  header .title img {
+    display: none;
   }
 }
 header .nav-show-mobile {
@@ -248,10 +281,20 @@ header .nav-show-mobile span:hover, header .nav-show-mobile span:active {
   background: #5c7fc0;
   cursor: pointer;
 }
+@media screen and (max-width: 650px) {
+  header .nav-show-mobile span {
+    font-size: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  header .nav-show-mobile {
+    width: 25%;
+  }
+}
 header ul {
   margin: auto 0;
   padding: 0 !important;
-  width: 70%;
+  width: 65%;
   font-size: 125%;
   text-align: right;
 }
@@ -320,9 +363,16 @@ header ul li:nth-child(6) {
 header ul li:nth-child(6):hover {
   color: #909090;
 }
-@media screen and (max-width: 1320px) {
+@media screen and (max-width: 1380px) {
   header ul {
+    width: 70%;
     font-size: 110%;
+  }
+}
+@media screen and (max-width: 1180px) {
+  header ul {
+    font-size: 100%;
+    width: 67.5%;
   }
 }
 @media screen and (max-width: 1140px) {

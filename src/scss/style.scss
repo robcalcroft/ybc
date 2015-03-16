@@ -155,15 +155,38 @@ header {
 	.title {
 		font-family: Norpeth-Medium;
 		margin: auto 0;
-		width: 30%;
+		width: 35%;
 		text-align: left;
 		font-size: 175%;
-		@media screen and (max-width: 1320px) {
+		@media screen and (max-width: 1380px) {
 			font-size: 125%;
+			width: 30%;
+		}
+		@media screen and (max-width: 1180px) {
+			width: 32.5%;
 		}
 		@media screen and (max-width: 1140px) {
 			font-size: 175%;
 			width: 70%;
+		}
+		@media screen and (max-width: 650px) {
+			font-size: 125%;
+			width: 75%;
+		}
+		@media screen and (max-width: 470px) {
+			font-size: 100%;
+		}
+		@media screen and (max-width: 400px) {
+			font-size: 95%;
+		}
+		@media screen and (max-width: 360px) {
+			font-size: 92.5%;
+			span {
+				padding-left: 0 !important;
+			}
+			img {
+				display: none;
+			}
 		}
 	}
 	.nav-show-mobile {
@@ -181,12 +204,18 @@ header {
 				background: $ybc-light-blue;
 				cursor: pointer;
 			}
+			@media screen and (max-width: 650px) {
+				font-size: 100%;
+			}
+		}
+		@media screen and (max-width: 650px) {
+			width: 25%;
 		}
 	}
 	ul {
 		margin: auto 0;
 		padding: 0 !important;
-		width: 70%;
+		width: 65%;
 		font-size: 125%;
 		text-align: right;
 		li {
@@ -201,8 +230,13 @@ header {
 			&:nth-child(5) { @include header-link-border($ybc-light-blue); }
 			&:nth-child(6) { @include header-link-border($ybc-turquoise); }
 		}
-		@media screen and (max-width: 1320px) {
+		@media screen and (max-width: 1380px) {
+			width: 70%;
 			font-size: 110%;
+		}
+		@media screen and (max-width: 1180px) {
+			font-size: 100%;
+			width: 67.5%;
 		}
 	}
 	@media screen and (max-width: 1140px) {
