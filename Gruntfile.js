@@ -123,21 +123,7 @@ module.exports = function(grunt) {
         dest: 'build/',
         cwd: 'src/'
       }
-    },
-
-    // 'ftp-deploy': {
-    //   build: {
-    //     auth: {
-    //       host: 'yrm2015.co.uk',
-    //       port: 21,
-    //       authKey: 'yrm',
-    //       authPath: '../.ftppass'
-    //     },
-    //     src: 'build/',
-    //     dest: '/httpdocs/dev/',
-    //     exclusions: ['build/.DS_Store']
-    //   }
-    // }
+    }
   });
 
   // Load the plugins.
