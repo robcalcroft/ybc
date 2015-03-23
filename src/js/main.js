@@ -2,11 +2,11 @@ $(document).ready(function() {
 	// Tooltips
 	(function addToolTip() {
 		var ttContent = "<ul class='nav-tooltip'>"+
-							"<li><a href='/ybc/build/people/mal'>Credit</a></li>"+
-							"<li><a href='/ybc/build/people/catherine'>Finance</a></li>"+
-							"<li><a href='/ybc/build/people/jackie'>Marketing</a>"+
-							"<li><a href='/ybc/build/people/john'>Quality, Environment, Health & Safety</a></li>"+
-							"<li><a href='/ybc/build/people/cath'>Leadership and Staff Development</a></li>"+
+							"<li><a href='/people/mal'>Credit</a></li>"+
+							"<li><a href='/people/catherine'>Finance</a></li>"+
+							"<li><a href='/people/jackie'>Marketing</a>"+
+							"<li><a href='/people/john'>Quality, Environment, Health & Safety</a></li>"+
+							"<li><a href='/people/cath'>Leadership and Staff Development</a></li>"+
 						"</ul>";
 
 		$('#about-nav').tooltipster({
