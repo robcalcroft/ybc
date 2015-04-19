@@ -21,27 +21,32 @@ $(document).ready(function() {
 		$('#nav').slideToggle();
 	});
 
+	if($('#archived-updates, #updates').length > 0) {
+		updateRunner($('#archived-updates, #updates')[0]);
+	}
+
 });
 
-function updateRunner() {
-	if($('#updates').length) {
-		IN.API.Raw('companies/9333069/updates?event-type=status-update&format=json').method('GET').result(function(d){showUpdates(d, true, $('#updates'))});
-	}
-	if($('#archived-updates').length) {
-		IN.API.Raw('companies/9333069/updates?event-type=status-update&format=json').method('GET').result(function(d){showUpdates(d, false, $('#archived-updates'))});
-	}
+function updateRunner(el) {
+	$.getJSON('http://api.tumblr.com/v2/blog/yorkshirebusinesscollective.tumblr.com/posts/text?api_key=gLvLtO7ag70EkJZtIOWiXUrRX9o58VRddXe96tdGIDmrTzcUQd&callback=?&notes_info=true', function(data) {
+		showUpdates(data.response.posts, el);
+	});
 }
 
-function showUpdates(updates, first, el) {
-	var updatesLen = updates.values.length;
-	if (updatesLen === 1 && !first) { el.append('No archived updates') };
-	while(updatesLen--) {
-		if(!first) { continue; }
-		var content = updates.values[updatesLen].updateContent.companyStatusUpdate.share.comment,
-			likes = updates.values[updatesLen].likes._total,
-			d = new Date(updates.values[updatesLen].timestamp); 
-		d = d.getDay()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();;
-		el.append('<div class="updates">' + content + '<div style="color:gray;">'+d+' - '+likes+' likes</div></div>');
-		if(first) { break; }
+function showUpdates(updates, el) {
+	var len = updates.length, d;
+
+	if(el.id === 'updates') {
+		d = new Date(updates[0].timestamp * 1000);
+		$(el).append('<div class="updates">' + updates[0].body + '<div style="color:gray;">Posted - '+d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear()+'</div></div>');
+	} else {
+		updates = updates.reverse();
+		while(len--) {
+			if(len === updates.length - 1) {
+				continue;
+			}
+			d = new Date(updates[len].timestamp * 1000);
+			$(el).append('<div class="updates">' + updates[len].body + '<div style="color:gray;">Posted - '+d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear()+'</div></div>');
+		}
 	}
 }
