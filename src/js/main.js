@@ -2,11 +2,11 @@ $(document).ready(function() {
 	// Tooltips
 	(function addToolTip() {
 		var ttContent = "<ul class='nav-tooltip'>"+
-							"<li><a href='/ybc/build/people/mal'>Credit</a></li>"+
-							"<li><a href='/ybc/build/people/catherine'>Finance</a></li>"+
-							"<li><a href='/ybc/build/people/jackie'>Marketing</a>"+
-							"<li><a href='/ybc/build/people/john'>Quality, Environment, Health & Safety</a></li>"+
-							"<li><a href='/ybc/build/people/cath'>Leadership and Staff Development</a></li>"+
+              "<li><a href='/people/jackie'>Marketing</a>"+
+              "<li><a href='/people/cath'>Mentoring &amp; Coaching</a></li>"+
+              "<li><a href='/people/catherine'>Finance &amp; Accounting</a></li>"+
+							"<li><a href='/people/elizabeth'>Corporate Financial Planning</a></li>"+
+							"<li><a href='/people/john'>Quality, Environment, Health & Safety</a></li>"+
 						"</ul>";
 
 		$('#about-nav').tooltipster({
@@ -46,7 +46,7 @@ function showUpdates(updates, el) {
 				continue;
 			}
 			d = new Date(updates[len].timestamp * 1000);
-			$(el).append('<div class="updates">' + updates[len].body + '<div style="color:gray;">Posted - '+d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear()+'</div></div>');
+			$(el).append('<div class="updates">' + updates[len].body + '<div style="color:gray;">Posted - '+d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear()+'</div></div><br />');
 		}
 	}
 }
