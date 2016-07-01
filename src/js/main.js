@@ -3,7 +3,7 @@ $(document).ready(function() {
 	(function addToolTip() {
 		var ttContent = "<ul class='nav-tooltip'>"+
               "<li><a href='/people/jackie'>Marketing</a>"+
-              "<li><a href='/people/cath'>Mentoring &amp; Coaching</a></li>"+
+              "<li><a href='/mentoringandcoaching'>Mentoring &amp; Coaching</a></li>"+
               "<li><a href='/people/catherine'>Finance &amp; Accounting</a></li>"+
 							"<li><a href='/people/elizabeth'>Corporate Financial Planning</a></li>"+
 							"<li><a href='/people/john'>Quality, Environment, Health & Safety</a></li>"+

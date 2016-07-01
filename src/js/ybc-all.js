@@ -1,10 +1,10 @@
-/* ** ybc 2016-06-30 - DO NOT EDIT; FILE AUTO GENERATED ** */
+/* ** ybc 2016-07-01 - DO NOT EDIT; FILE AUTO GENERATED ** */
 $(document).ready(function() {
 	// Tooltips
 	(function addToolTip() {
 		var ttContent = "<ul class='nav-tooltip'>"+
               "<li><a href='/people/jackie'>Marketing</a>"+
-              "<li><a href='/people/cath'>Mentoring &amp; Coaching</a></li>"+
+              "<li><a href='/mentoringandcoaching'>Mentoring &amp; Coaching</a></li>"+
               "<li><a href='/people/catherine'>Finance &amp; Accounting</a></li>"+
 							"<li><a href='/people/elizabeth'>Corporate Financial Planning</a></li>"+
 							"<li><a href='/people/john'>Quality, Environment, Health & Safety</a></li>"+
